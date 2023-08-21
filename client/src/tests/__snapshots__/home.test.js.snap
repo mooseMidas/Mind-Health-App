@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Home component 1`] = `
+<DocumentFragment>
+  <div
+    class="main"
+  >
+    <div
+      class="d-flex layout"
+    >
+      <div
+        class="sidebar"
+      >
+        <div
+          class="sidebar-header"
+        >
+          <h1
+            class="logo"
+          >
+            MH
+          </h1>
+          <h2
+            class="role mt-2"
+          >
+            User
+          </h2>
+        </div>
+        <div
+          class="menu"
+        >
+          <div
+            class="d-flex menu-item active-menu-item"
+          >
+            <i
+              class="ri-home-2-fill"
+            />
+            <a
+              href="/"
+            >
+              Home
+            </a>
+          </div>
+          <div
+            class="d-flex menu-item false"
+          >
+            <i
+              class="ri-file-list-3-fill"
+            />
+            <a
+              href="/appointments"
+            >
+              Appointments
+            </a>
+          </div>
+          <div
+            class="d-flex menu-item false"
+          >
+            <i
+              class="ri-hospital-fill"
+            />
+            <a
+              href="/apply-doctor"
+            >
+              Apply Doctor
+            </a>
+          </div>
+          <div
+            class="d-flex menu-item"
+          >
+            <i
+              class="ri-logout-box-fill"
+            />
+            <a
+              href="/login"
+            >
+              Log out
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="content"
+      >
+        <div
+          class="header"
+        >
+          <i
+            class="ri-close-circle-line header-action-icon"
+          />
+          <div
+            class="d-flex align-items-center px-4"
+          >
+            <span
+              class="ant-badge css-dev-only-do-not-override-byeoj0"
+            >
+              <i
+                class="ri-notification-3-line header-action-icon px-3"
+              />
+            </span>
+            <span
+              class="mx-3"
+            >
+              Welcome 
+            </span>
+          </div>
+        </div>
+        <div
+          class="body"
+        >
+          <div
+            class="row"
+            gutter="20"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
