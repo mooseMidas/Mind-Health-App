@@ -193,6 +193,10 @@ npm start
 
  - Sensitive configuration details are stored in environment variables to prevent exposure.
 
+## Deployed App
+
+https://mind-health-live-3c3c322cb7db.herokuapp.com/login
+
 
 ## Third-Party APIs
 
