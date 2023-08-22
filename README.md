@@ -88,9 +88,10 @@ The appointment scheduling application aims to provide a user-friendly platform 
    - Approves and blocks Doctor role requests.
 
 2. **Data Retrieval:**
+
    - Admins can pull a list of all doctors,users and appointment history for analysis and reporting.
-   
-   NB* Update isAdmin value to "true" in order to have Admin access.
+
+   NB\* Update isAdmin value to "true" in order to have Admin access.
 
 ### Similar Applications
 
@@ -158,13 +159,15 @@ npm install
 cd client
 npm install
 
-Create an .env file in the backend directory and provide following details:
+Rename .env.example file to .env then provide following environment variables:
 
 PORT=
+HOST=http://localhost
 DB_CONNECTION_STRING=
 JWT_SECRET=
-GOOGLE_CLIENT_ID = visit https://console.developers.google.com/ to setup
+GOOGLE_CLIENT_ID =
 GOOGLE_CLIENT_SECRET =
+HEROKU_HOST_URI = https://your-heroku-app-url
 
 ## To Run Test Suite:
 
@@ -176,19 +179,12 @@ Front end test:
 cd client
 npm test
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 9779ef5bd25f75a5af23242a8d457bf3c283d1a8
 ## To Start Application For Development:
 
 cd backend
 npm run dev
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 9779ef5bd25f75a5af23242a8d457bf3c283d1a8
 ## To Start Application:
 
 cd backend
@@ -197,24 +193,20 @@ npm start
 cd client
 npm start
 
-
 ## Security Measures
 
- - User passwords are securely hashed using bcrypt before storing in the database.
+- User passwords are securely hashed using bcrypt before storing in the database.
 
- - JWT is used for user authentication, ensuring secure access to various features.
+- JWT is used for user authentication, ensuring secure access to various features.
 
- - Google login users will be authenticated through Passport.js framework. Upon successful login, JWT token is created for accessing private routes.
+- Google login users will be authenticated through Passport.js framework. Upon successful login, JWT token is created for accessing private routes.
 
- - Sensitive configuration details are stored in environment variables to prevent exposure.
+- Sensitive configuration details are stored in environment variables to prevent exposure.
 
 ## Deployed App
 
 https://mind-health-live-3c3c322cb7db.herokuapp.com
 
-
 ## Third-Party APIs
 
 Google API is used to enable quick and secure user registration and login.
-
-
