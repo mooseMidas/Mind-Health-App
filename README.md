@@ -154,6 +154,7 @@ You will need node and npm installed globally on your machine.
 
 cd backend
 npm install
+
 cd client
 npm install
 
@@ -175,6 +176,13 @@ Front end test:
 cd client
 npm test
 
+
+## To Start Application For Development:
+
+cd backend
+npm run dev
+
+
 ## To Start Application:
 
 cd backend
@@ -182,6 +190,7 @@ npm start
 
 cd client
 npm start
+
 
 ## Security Measures
 

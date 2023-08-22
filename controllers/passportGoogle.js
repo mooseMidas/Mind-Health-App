@@ -3,16 +3,29 @@ const passport = require('passport');
 const User = require('../models/userModel');
 require('dotenv').config();
 
+// Config for both deployed and local hosting
+const strategyConfig = {
+	clientID: process.env.GOOGLE_CLIENT_ID,
+	clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+	callbackURL:
+		process.env.NODE_ENV === 'production'
+			? `${process.env.HEROKU_HOST_URI}/api/google-auth/google/callback`
+			: `${process.env.HOST}:${process.env.PORT}/api/google-auth/google/callback`,
+	passReqToCallback: true,
+	scope: ['profile', 'email'],
+};
 // Configure Google OAuth strategy
 passport.use(
+	// new GoogleStrategy(
+	// 	{
+	// 		// Google OAuth credentials and call back function
+	// 		clientID: process.env.GOOGLE_CLIENT_ID,
+	// 		clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+	// 		callbackURL: 'http://localhost:5000/api/google-auth/google/callback',
+	// 		scope: ['profile', 'email'],
+	// 	},
 	new GoogleStrategy(
-		{
-			// Google OAuth credentials and call back function
-			clientID: process.env.GOOGLE_CLIENT_ID,
-			clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-			callbackURL: 'http://localhost:5000/api/google-auth/google/callback',
-			scope: ['profile', 'email'],
-		},
+		strategyConfig,
 		async (accessToken, refreshToken, email, profile, done) => {
 			try {
 				// Check if the user with the given email already exists

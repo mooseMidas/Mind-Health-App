@@ -25,7 +25,12 @@ router.get('/login/success', (req, res) => {
           httpOnly: true,
         })
         // User is then redirected to home page
-        .redirect('http://localhost:3000/')
+        // .redirect('http://localhost:3000/')
+        .redirect(
+          process.env.NODE_ENV === 'production'
+            ? `${process.env.HEROKU_HOST_URI}/`
+            : 'http://localhost:3000/'
+        );
     } else {
         res.status(403).send({
             success: false,
@@ -44,13 +49,24 @@ router.get('/login/failed', (req, res) => {
 });
 
 // Google callback route after successful authentication
+// router.get(
+// 	'/google/callback',
+// 	passport.authenticate('google', {
+// 		failureRedirect: '/login/failed',
+// 		successRedirect: 'http://localhost:5000/api/google-auth/login/success', // Redirect upon successful authentication
+// 	})
+// );
+
 router.get(
-	'/google/callback',
-	passport.authenticate('google', {
-		failureRedirect: '/login/failed',
-		successRedirect: 'http://localhost:5000/api/google-auth/login/success', // Redirect upon successful authentication
-	})
+  '/google/callback',
+  passport.authenticate('google', {
+    failureRedirect: '/login/failed',
+    successRedirect: process.env.NODE_ENV === 'production'
+      ? `${process.env.HEROKU_HOST_URI}/api/google-auth/login/success`
+      : 'http://localhost:5000/api/google-auth/login/success',
+  })
 );
+
 
 // Initiates Google authentication middleware
 router.get(
@@ -62,9 +78,14 @@ router.get(
 router.get('/logout', (req, res) => {
     // Log out the user and clear the JWT token cookie
     req.logout();
-    res.clearCookie('access_token'); // Clear the JWT token cookie
+    res.clearCookie('access_token') // Clear the JWT token cookie
     // Redirect to the login page
-    res.redirect('http://localhost:3000/login')
+    // res.redirect('http://localhost:3000/login')
+    .redirect(
+      process.env.NODE_ENV === 'production'
+        ? `${process.env.HEROKU_HOST_URI}/login`
+        : 'http://localhost:3000/login'
+    );
 })
 
 module.exports = router;

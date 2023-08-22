@@ -45,12 +45,20 @@ function Login() {
 
 	// Define an asynchronous function for initiating Google login
 	// Opens a new window with the specified URL for Google callback. '_self' indicates that the current window/tab will navigate to the URL
+	// const googleLogin = async () => {
+	// 	window.open(
+	// 		'http://localhost:5000/api/google-auth/google/callback',
+	// 		'_self'
+	// 	);
+	// };
 	const googleLogin = async () => {
-		window.open(
-			'http://localhost:5000/api/google-auth/google/callback',
-			'_self'
-		);
-	};
+		const callbackUrl = process.env.NODE_ENV === 'production'
+		  ? 'https://your-heroku-app-name.herokuapp.com/api/google-auth/google/callback'
+		  : 'http://localhost:5000/api/google-auth/google/callback';
+	  
+		window.open(callbackUrl, '_self');
+	  };
+	  
 
 	return (
 		<div className="authentication">
