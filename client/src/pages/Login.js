@@ -53,7 +53,7 @@ function Login() {
 	// };
 	const googleLogin = async () => {
 		const callbackUrl = process.env.NODE_ENV === 'production'
-		  ? 'https://your-heroku-app-name.herokuapp.com/api/google-auth/google/callback'
+		  ? 'https://mind-health-live-3c3c322cb7db.herokuapp.com/api/google-auth/google/callback'
 		  : 'http://localhost:5000/api/google-auth/google/callback';
 	  
 		window.open(callbackUrl, '_self');
