@@ -176,13 +176,19 @@ Front end test:
 cd client
 npm test
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9779ef5bd25f75a5af23242a8d457bf3c283d1a8
 ## To Start Application For Development:
 
 cd backend
 npm run dev
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9779ef5bd25f75a5af23242a8d457bf3c283d1a8
 ## To Start Application:
 
 cd backend
@@ -201,6 +207,10 @@ npm start
  - Google login users will be authenticated through Passport.js framework. Upon successful login, JWT token is created for accessing private routes.
 
  - Sensitive configuration details are stored in environment variables to prevent exposure.
+
+## Deployed App
+
+https://mind-health-live-3c3c322cb7db.herokuapp.com
 
 
 ## Third-Party APIs
