@@ -175,6 +175,11 @@ Front end test:
 cd client
 npm test
 
+## To Start Application For Development:
+
+cd backend
+npm run dev
+
 ## To Start Application:
 
 cd backend
@@ -195,7 +200,7 @@ npm start
 
 ## Deployed App
 
-https://mind-health-live-3c3c322cb7db.herokuapp.com/login
+https://mind-health-live-3c3c322cb7db.herokuapp.com
 
 
 ## Third-Party APIs
