@@ -14,16 +14,9 @@ const strategyConfig = {
 	passReqToCallback: true,
 	scope: ['profile', 'email'],
 };
+
 // Configure Google OAuth strategy
 passport.use(
-	// new GoogleStrategy(
-	// 	{
-	// 		// Google OAuth credentials and call back function
-	// 		clientID: process.env.GOOGLE_CLIENT_ID,
-	// 		clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-	// 		callbackURL: 'http://localhost:5000/api/google-auth/google/callback',
-	// 		scope: ['profile', 'email'],
-	// 	},
 	new GoogleStrategy(
 		strategyConfig,
 		async (accessToken, refreshToken, email, profile, done) => {

@@ -43,22 +43,16 @@ function Login() {
 		}
 	};
 
-	// Define an asynchronous function for initiating Google login
-	// Opens a new window with the specified URL for Google callback. '_self' indicates that the current window/tab will navigate to the URL
-	// const googleLogin = async () => {
-	// 	window.open(
-	// 		'http://localhost:5000/api/google-auth/google/callback',
-	// 		'_self'
-	// 	);
-	// };
+	// Asynchronous function for initiating Google login
+	// both URLS below must be defined in google Google Developer Console
 	const googleLogin = async () => {
-		const callbackUrl = process.env.NODE_ENV === 'production'
-		  ? 'https://mind-health-live-3c3c322cb7db.herokuapp.com/api/google-auth/google/callback'
-		  : 'http://localhost:5000/api/google-auth/google/callback';
-	  
+		const callbackUrl =
+			process.env.NODE_ENV === 'production'
+				? 'https://mind-health-live-3c3c322cb7db.herokuapp.com/api/google-auth/google/callback'
+				: 'http://localhost:5000/api/google-auth/google/callback';
+
 		window.open(callbackUrl, '_self');
-	  };
-	  
+	};
 
 	return (
 		<div className="authentication">

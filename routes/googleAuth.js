@@ -25,7 +25,6 @@ router.get('/login/success', (req, res) => {
           httpOnly: true,
         })
         // User is then redirected to home page
-        // .redirect('http://localhost:3000/')
         .redirect(
           process.env.NODE_ENV === 'production'
             ? `${process.env.HEROKU_HOST_URI}/`
@@ -49,14 +48,6 @@ router.get('/login/failed', (req, res) => {
 });
 
 // Google callback route after successful authentication
-// router.get(
-// 	'/google/callback',
-// 	passport.authenticate('google', {
-// 		failureRedirect: '/login/failed',
-// 		successRedirect: 'http://localhost:5000/api/google-auth/login/success', // Redirect upon successful authentication
-// 	})
-// );
-
 router.get(
   '/google/callback',
   passport.authenticate('google', {
@@ -80,7 +71,6 @@ router.get('/logout', (req, res) => {
     req.logout();
     res.clearCookie('access_token') // Clear the JWT token cookie
     // Redirect to the login page
-    // res.redirect('http://localhost:3000/login')
     .redirect(
       process.env.NODE_ENV === 'production'
         ? `${process.env.HEROKU_HOST_URI}/login`
